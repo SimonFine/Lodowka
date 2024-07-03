@@ -1,3 +1,4 @@
 # Lodowka
-Bardzo piękny i przystojny projekt mający na celu zmniejszenie ilości marnowanego jedznia o raz promocję przemyślanego zarządaznia jedzniem.
+Bardzo piękny i przystojny projekt mający na celu zmniejszenie ilości marnowanego jedznia oraz promocję przemyślanego zarządzania jedzeniem.
 Aplikacja mobilna
+lol
