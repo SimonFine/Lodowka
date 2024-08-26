@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'pages/LogIn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,26 +13,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Lodowka',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         //Uncomment this in further development to use material colors
         //colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
         useMaterial3: true,
+        textTheme: GoogleFonts.latoTextTheme(),
       ),
-      home: const MyHomePage(title: 'Lodowka Home Page'),
+      home: const LogIn(title: 'Lodowka login page'),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFFBD852), // Set the background color to yellow
-      body: Container(), // Empty container to occupy the screen
-    );
-  }
-}
