@@ -75,7 +75,10 @@ class _LogInState extends State<LogIn> {
                     Row(
                       children: [
                         Checkbox(value: true, onChanged: null),
-                        Text('Remember Me?'),
+                        Text('Remember Me?', 
+                          style: TextStyle(
+                          color: Color(0xFF1D1808), 
+                          fontSize: 14)),
                       ],
                     ),
                     TextButton(
@@ -93,7 +96,7 @@ class _LogInState extends State<LogIn> {
                   ),
                 ),
                 SizedBox(height: 35),
-                Row(
+                const Row(
                   children: [
                     Expanded(
                       child: Divider(
@@ -101,7 +104,13 @@ class _LogInState extends State<LogIn> {
                         color: Color(0xFFCAC4D0),
                       ),
                     ),
-                    Text('or'),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 15,
+                        right: 15
+                      ),
+                      child: Text('or'),
+                    ),
                     Expanded(
                       child: Divider(
                         height: 2,
