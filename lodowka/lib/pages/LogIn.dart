@@ -84,7 +84,11 @@ class _LogInState extends State<LogIn> {
                     ),
                     TextButton(
                       onPressed: () {},
-                      child: Text('Forgot Password?'),
+                      child: Text('Forgot Password?', 
+                        style: TextStyle(
+                          color: Color(0xFF41518C),
+                          fontWeight: FontWeight.bold
+                        ),),
                     ),
                   ],
                 ),
