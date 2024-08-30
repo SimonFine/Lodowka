@@ -140,7 +140,13 @@ class _LogInState extends State<LogIn> {
                   width: double.infinity,
                   child: FilledButton(
                     onPressed: () {
-                    },
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(
+                          builder: (context) => Signin(title: 'Sign In') // Correct class name
+                        ),
+                      );
+                      },
                     child: Text('Sign In', 
                       style: TextStyle(
                         fontSize: 20, 
