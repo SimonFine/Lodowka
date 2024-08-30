@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'SignIn.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key, required this.title});
@@ -82,7 +83,7 @@ class _LogInState extends State<LogIn> {
                       ],
                     ),
                     TextButton(
-                      onPressed: null,
+                      onPressed: () {},
                       child: Text('Forgot Password?'),
                     ),
                   ],
@@ -91,8 +92,19 @@ class _LogInState extends State<LogIn> {
                 SizedBox(
                   width: double.infinity,
                   child: FilledButton(
-                    onPressed: null,
-                    child: Text('Log In'),//buttony są nieaktywne więc na razie dodawanie kolorów się jakoś sra
+                    onPressed: () {},
+                    child: Text('Log In',style: TextStyle(
+                        fontSize: 20, 
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF1D1B20)),),
+                    style: FilledButton.styleFrom(
+                    backgroundColor: Color(0xFFFBD852),
+                    padding: EdgeInsets.all(14),
+                    side: BorderSide(
+                      color: Color(0xFF1D1B20),
+                      width: 2
+                    )
+                    ),
                   ),
                 ),
                 SizedBox(height: 35),
@@ -123,8 +135,21 @@ class _LogInState extends State<LogIn> {
                 SizedBox(
                   width: double.infinity,
                   child: FilledButton(
-                    onPressed: null,
-                    child: Text('Sign In'),
+                    onPressed: () {
+                    },
+                    child: Text('Sign In', 
+                      style: TextStyle(
+                        fontSize: 20, 
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF1D1B20)),),
+                    style: FilledButton.styleFrom(
+                    backgroundColor: Color(0xFFFAA4B7),
+                    padding: EdgeInsets.all(14),
+                    side: BorderSide(
+                      color: Color(0xFF1D1B20),
+                      width: 2
+                    )
+                    ),
                   ),
                 ),
               ],
