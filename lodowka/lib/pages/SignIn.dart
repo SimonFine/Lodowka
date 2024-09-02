@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'LogIn.dart';
+import 'HomePage.dart';
 
 class Signin extends StatefulWidget {
   const Signin({super.key, required this.title});
@@ -103,7 +104,13 @@ class _SigninState extends State<Signin> {
                 SizedBox(
                   width: double.infinity,
                   child: FilledButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(
+                          builder: (context)=> Homepage())
+                        );
+                    },
                     child: Text('Sign In',style: TextStyle(
                         fontSize: 20, 
                         fontWeight: FontWeight.bold,
