@@ -75,7 +75,7 @@ class _LogInState extends State<LogIn> {
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
                     Row(
-                      children: [
+                      children: const [
                         Checkbox(value: true, onChanged: null),
                         Text('Remember Me?', 
                           style: TextStyle(
@@ -104,10 +104,6 @@ class _LogInState extends State<LogIn> {
                           builder: (context)=> Homepage())
                         );
                     },
-                    child: Text('Log In',style: TextStyle(
-                        fontSize: 20, 
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF1D1B20)),),
                     style: FilledButton.styleFrom(
                     backgroundColor: Color(0xFFFBD852),
                     padding: EdgeInsets.all(14),
@@ -116,6 +112,10 @@ class _LogInState extends State<LogIn> {
                       width: 2
                     )
                     ),
+                    child: Text('Log In',style: TextStyle(
+                        fontSize: 20, 
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF1D1B20)),),
                   ),
                 ),
                 SizedBox(height: 35),
@@ -154,11 +154,6 @@ class _LogInState extends State<LogIn> {
                         ),
                       );
                       },
-                    child: Text('Sign In', 
-                      style: TextStyle(
-                        fontSize: 20, 
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF1D1B20)),),
                     style: FilledButton.styleFrom(
                     backgroundColor: Color(0xFFFAA4B7),
                     padding: EdgeInsets.all(14),
@@ -167,6 +162,11 @@ class _LogInState extends State<LogIn> {
                       width: 2
                     )
                     ),
+                    child: Text('Sign In', 
+                      style: TextStyle(
+                        fontSize: 20, 
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF1D1B20)),),
                   ),
                 ),
               ],

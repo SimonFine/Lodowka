@@ -17,21 +17,21 @@ class _HomepageState extends State<Homepage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('HOME PAGE'),
+            const Text('HOME PAGE'),
             FilledButton(onPressed: () {
               Navigator.push(
                 context, 
-                MaterialPageRoute(builder: (context)=> Addproduct()));
+                MaterialPageRoute(builder: (context)=> const Addproduct()));
                       },
-              child: Text('ADD PRODUCT')),
+              child: const Text('ADD PRODUCT')),
             FilledButton(onPressed: () {
                Navigator.push(
                   context, 
                   MaterialPageRoute(
-                    builder: (context)=> Signin(title: 'Sign In'))
+                    builder: (context)=> const Signin(title: 'Sign In'))
                   );
             }, 
-              child: Text('GO BACK'))
+              child: const Text('GO BACK'))
             ],
         ),
       ),
