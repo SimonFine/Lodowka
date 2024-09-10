@@ -115,7 +115,6 @@ class GetProducts extends State<AddProduct> {
               children: [
                 Expanded(
                   child: TextField(
-                    obscureText: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(100),
