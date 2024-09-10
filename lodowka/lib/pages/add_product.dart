@@ -106,7 +106,11 @@ class GetProducts extends State<AddProduct> {
       ),
       backgroundColor: const Color(0xFFFDFDFD),
       body: Padding(
-        padding: const EdgeInsets.all(30),
+        padding: const EdgeInsets.only(
+          top: 30,
+          left: 30,
+          right: 30,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
