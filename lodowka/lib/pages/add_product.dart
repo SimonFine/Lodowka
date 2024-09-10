@@ -194,20 +194,17 @@ class GetProducts extends State<AddProduct> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(
-                        bottom: 15,
-                        right: 15,
-                      ),
+                      padding: const EdgeInsets.all(15),  //rowny padding w calym kontenerze produktu
                       child: Row(
                         children: [
                           SizedBox(
-                            width: 90,
-                            height: 90,
+                            width: 70,
+                            height: 70,
                             child: product.icon,
                           ),
-                          SizedBox(
-                            width: 192,
-                            child: Flexible(
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 15),  //aby oddzielic tekst od przycisku dodaj
                               child: Text(
                                 product.name,
                                 style: const TextStyle(
@@ -221,13 +218,13 @@ class GetProducts extends State<AddProduct> {
                           Align(
                             alignment: Alignment.bottomRight,
                             child: SizedBox(
-                              width: 50,
-                              height: 50,
+                              width: 45,  //45 chyba jest blizej figmy
+                              height: 45,
                               child: FilledButton(
                                 onPressed: () {},
                                 style: FilledButton.styleFrom(
-                                  backgroundColor: const Color(0xFFFFDFDF),
-                                  padding: const EdgeInsets.all(14),
+                                  backgroundColor: const Color(0xFFFDFDFD),
+                                  padding: EdgeInsets.zero, //aby ikonka byla wycentrowana nawet jesli zmieniamy wymiary SizedBox
                                   side: const BorderSide(
                                     color: Color(0xFF1D1B20),
                                     width: 2,
@@ -236,6 +233,7 @@ class GetProducts extends State<AddProduct> {
                                 child: const Icon(
                                   Icons.add,
                                   color: Color(0xFF1D1B20),
+                                  size: 20,
                                 ),
                               ),
                             ),
