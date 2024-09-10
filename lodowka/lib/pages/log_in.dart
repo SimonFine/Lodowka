@@ -35,13 +35,12 @@ class _LogInState extends State<LogIn> {
           ),
           child: Padding(
             padding: const EdgeInsets.only(
-              top: 90,
+              top: 40,
               left: 30,
               right: 30,
-              bottom: 33,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+            child: ListView(
+              //crossAxisAlignment: CrossAxisAlignment.stretch,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
                 Text(
