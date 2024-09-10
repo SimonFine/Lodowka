@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'SignIn.dart';
-import 'HomePage.dart';
+import 'sign_in.dart';
+import 'home_page.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key, required this.title});
@@ -35,13 +35,12 @@ class _LogInState extends State<LogIn> {
           ),
           child: Padding(
             padding: const EdgeInsets.only(
-              top: 90,
+              top: 40,
               left: 30,
               right: 30,
-              bottom: 33,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+            child: ListView(
+              //crossAxisAlignment: CrossAxisAlignment.stretch,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
                 Text(
@@ -75,7 +74,7 @@ class _LogInState extends State<LogIn> {
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
                     Row(
-                      children: [
+                      children: const [
                         Checkbox(value: true, onChanged: null),
                         Text('Remember Me?', 
                           style: TextStyle(
@@ -101,13 +100,9 @@ class _LogInState extends State<LogIn> {
                       Navigator.push(
                         context, 
                         MaterialPageRoute(
-                          builder: (context)=> Homepage())
+                          builder: (context)=> HomePage())
                         );
                     },
-                    child: Text('Log In',style: TextStyle(
-                        fontSize: 20, 
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF1D1B20)),),
                     style: FilledButton.styleFrom(
                     backgroundColor: Color(0xFFFBD852),
                     padding: EdgeInsets.all(14),
@@ -116,6 +111,10 @@ class _LogInState extends State<LogIn> {
                       width: 2
                     )
                     ),
+                    child: Text('Log In',style: TextStyle(
+                        fontSize: 20, 
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF1D1B20)),),
                   ),
                 ),
                 SizedBox(height: 35),
@@ -150,15 +149,10 @@ class _LogInState extends State<LogIn> {
                       Navigator.push(
                         context, 
                         MaterialPageRoute(
-                          builder: (context) => Signin(title: 'Sign In') // Correct class name
+                          builder: (context) => SignIn(title: 'Sign In') // Correct class name
                         ),
                       );
                       },
-                    child: Text('Sign In', 
-                      style: TextStyle(
-                        fontSize: 20, 
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF1D1B20)),),
                     style: FilledButton.styleFrom(
                     backgroundColor: Color(0xFFFAA4B7),
                     padding: EdgeInsets.all(14),
@@ -167,6 +161,11 @@ class _LogInState extends State<LogIn> {
                       width: 2
                     )
                     ),
+                    child: Text('Sign In', 
+                      style: TextStyle(
+                        fontSize: 20, 
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF1D1B20)),),
                   ),
                 ),
               ],
