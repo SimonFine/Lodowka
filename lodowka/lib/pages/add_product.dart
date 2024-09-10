@@ -66,7 +66,7 @@ class _AddProductState extends State<AddProduct> {
   final GroupButtonController _controller = GroupButtonController(selectedIndex: 0);
   List<Products> list = [];
 
-  void getProducts() {
+  void getProductsFromList() {
     list = Products.getProducts();
   }
 
@@ -74,7 +74,7 @@ class _AddProductState extends State<AddProduct> {
 
   @override
   Widget build(BuildContext context) {
-    getProducts();
+    getProductsFromList();
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
