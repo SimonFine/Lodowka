@@ -7,7 +7,7 @@ class AddProduct extends StatefulWidget {
   const AddProduct({super.key});
 
   @override
-  State<AddProduct> createState() => GetProducts();
+  State<AddProduct> createState() => _AddProductState();
 }
 
 class Products {
@@ -62,7 +62,7 @@ class Products {
   }
 }
 
-class GetProducts extends State<AddProduct> {
+class _AddProductState extends State<AddProduct> {
   final GroupButtonController _controller = GroupButtonController(selectedIndex: 0);
   List<Products> list = [];
 
