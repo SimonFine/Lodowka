@@ -181,6 +181,7 @@ class GetProducts extends State<AddProduct> {
             const SizedBox(height: 17),
             Expanded(
               child: ListView.separated(
+                padding: const EdgeInsets.only(bottom: 15),
                 itemBuilder: (context, index) {
                   final product = list[index];
                   return Container(
