@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/HomePage.dart';
+import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:group_button/group_button.dart';
+import 'dart:developer' as developer;
 
-class Addproduct extends StatefulWidget {
-  const Addproduct({super.key});
+class AddProduct extends StatefulWidget {
+  const AddProduct({super.key});
 
   @override
-  State<Addproduct> createState() => _AddproductState();
+  State<AddProduct> createState() => GetProducts();
 }
 
 class Products {
@@ -20,7 +21,7 @@ class Products {
     required this.color
   });
 
-  static List<Products> GetProducts() {
+  static List<Products> getProducts() {
     List<Products> list = [];
     list.add(Products(
       name: 'Mleko UHT 3,2% Bez Laktozy',
@@ -61,19 +62,19 @@ class Products {
   }
 }
 
-class _AddproductState extends State<Addproduct> {
+class GetProducts extends State<AddProduct> {
   final GroupButtonController _controller = GroupButtonController(selectedIndex: 0);
   List<Products> list = [];
 
-  void GetProducts() {
-    list = Products.GetProducts();
+  void getProducts() {
+    list = Products.getProducts();
   }
 
 
 
   @override
   Widget build(BuildContext context) {
-    GetProducts();
+    getProducts();
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -83,7 +84,7 @@ class _AddproductState extends State<Addproduct> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const Homepage(),
+                  builder: (context) => const HomePage(),
                 ),
               );
             },
@@ -170,7 +171,7 @@ class _AddproductState extends State<Addproduct> {
               controller: _controller,
               isRadio: true,
               buttons: const ["Recent", "Favourite"],
-              onSelected: (value, index, isSelected) => print(
+              onSelected: (value, index, isSelected) => developer.log(
                 "Button $value at index $index is ${isSelected ? 'selected' : 'unselected'}",
               ),
             ),
@@ -222,7 +223,7 @@ class _AddproductState extends State<Addproduct> {
                               child: FilledButton(
                                 onPressed: () {},
                                 style: FilledButton.styleFrom(
-                                  backgroundColor: const Color(0xffffdfdfd),
+                                  backgroundColor: const Color(0xFFFFDFDF),
                                   padding: const EdgeInsets.all(14),
                                   side: const BorderSide(
                                     color: Color(0xFF1D1B20),

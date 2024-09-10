@@ -1,19 +1,17 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-import 'SignIn.dart';
-import 'HomePage.dart';
+import 'log_in.dart';
+import 'home_page.dart';
 
-class LogIn extends StatefulWidget {
-  const LogIn({super.key, required this.title});
+class SignIn extends StatefulWidget {
+  const SignIn({super.key, required this.title});
 
   final String title;
 
   @override
-  State<LogIn> createState() => _LogInState();
+  State<SignIn> createState() => _SignInState();
 }
 
-class _LogInState extends State<LogIn> {
+class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +19,7 @@ class _LogInState extends State<LogIn> {
       body: Align(
         alignment: Alignment.bottomCenter,
         child: Container(
-          height: 650,
+          height: 730,
           decoration: BoxDecoration(
             color: const Color(0xFFFDFDFD),
             borderRadius: const BorderRadius.only(
@@ -44,38 +42,47 @@ class _LogInState extends State<LogIn> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                Text(
-                  'LOG IN',
+                const Text(
+                  'SIGN IN',
                   style: TextStyle(
                     color: Color(0xFF1D1808),
                     fontSize: 36,
                   ),
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 TextField(
                   obscureText: false,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(100)),
-                    prefixIcon: Icon(Icons.email),
+                    prefixIcon: const Icon(Icons.account_circle),
+                    labelText: 'Name',
+                  ),
+                ),
+                const SizedBox(height: 30),
+                TextField(
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(100)),
+                    prefixIcon: const Icon(Icons.email),
                     labelText: 'Email',
                   ),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 TextField(
                   obscureText: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(100)),
-                    prefixIcon: Icon(Icons.lock),
+                    prefixIcon: const Icon(Icons.lock),
                     labelText: 'Password',
                   ),
                 ),
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
-                    Row(
-                      children: const [
+                    const Row(
+                      children: [
                         Checkbox(value: true, onChanged: null),
                         Text('Remember Me?', 
                           style: TextStyle(
@@ -85,7 +92,7 @@ class _LogInState extends State<LogIn> {
                     ),
                     TextButton(
                       onPressed: () {},
-                      child: Text('Forgot Password?', 
+                      child: const Text('Forgot Password?', 
                         style: TextStyle(
                           color: Color(0xFF41518C),
                           fontWeight: FontWeight.bold
@@ -93,7 +100,7 @@ class _LogInState extends State<LogIn> {
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 SizedBox(
                   width: double.infinity,
                   child: FilledButton(
@@ -101,24 +108,24 @@ class _LogInState extends State<LogIn> {
                       Navigator.push(
                         context, 
                         MaterialPageRoute(
-                          builder: (context)=> Homepage())
+                          builder: (context)=> const HomePage())
                         );
                     },
                     style: FilledButton.styleFrom(
-                    backgroundColor: Color(0xFFFBD852),
-                    padding: EdgeInsets.all(14),
-                    side: BorderSide(
+                    backgroundColor: const Color(0xFFFBD852),
+                    padding: const EdgeInsets.all(14),
+                    side: const BorderSide(
                       color: Color(0xFF1D1B20),
                       width: 2
                     )
                     ),
-                    child: Text('Log In',style: TextStyle(
+                    child: const Text('Sign In',style: TextStyle(
                         fontSize: 20, 
                         fontWeight: FontWeight.bold,
                         color: Color(0xFF1D1B20)),),
                   ),
                 ),
-                SizedBox(height: 35),
+                const SizedBox(height: 35),
                 const Row(
                   children: [
                     Expanded(
@@ -142,27 +149,27 @@ class _LogInState extends State<LogIn> {
                     ),
                   ],
                 ),
-                SizedBox(height: 35),
+                const SizedBox(height: 35),
                 SizedBox(
                   width: double.infinity,
                   child: FilledButton(
-                    onPressed: () {
+                   onPressed: () {
                       Navigator.push(
                         context, 
                         MaterialPageRoute(
-                          builder: (context) => Signin(title: 'Sign In') // Correct class name
+                          builder: (context) =>  const LogIn(title: 'Lodowka login page') // Correct class name
                         ),
                       );
                       },
                     style: FilledButton.styleFrom(
-                    backgroundColor: Color(0xFFFAA4B7),
-                    padding: EdgeInsets.all(14),
-                    side: BorderSide(
+                    backgroundColor: const Color(0xFFFAA4B7),
+                    padding: const EdgeInsets.all(14),
+                    side: const BorderSide(
                       color: Color(0xFF1D1B20),
                       width: 2
                     )
                     ),
-                    child: Text('Sign In', 
+                    child: const Text('Log In', 
                       style: TextStyle(
                         fontSize: 20, 
                         fontWeight: FontWeight.bold,

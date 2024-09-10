@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/AddProduct.dart';
-import 'SignIn.dart';
+import 'package:flutter_application_1/pages/add_product.dart';
+import 'sign_in.dart';
 
-class Homepage extends StatefulWidget {
-  const Homepage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<Homepage> createState() => _HomepageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomepageState extends State<Homepage> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,14 +21,14 @@ class _HomepageState extends State<Homepage> {
             FilledButton(onPressed: () {
               Navigator.push(
                 context, 
-                MaterialPageRoute(builder: (context)=> const Addproduct()));
+                MaterialPageRoute(builder: (context)=> const AddProduct()));
                       },
               child: const Text('ADD PRODUCT')),
             FilledButton(onPressed: () {
                Navigator.push(
                   context, 
                   MaterialPageRoute(
-                    builder: (context)=> const Signin(title: 'Sign In'))
+                    builder: (context)=> const SignIn(title: 'Sign In'))
                   );
             }, 
               child: const Text('GO BACK'))
