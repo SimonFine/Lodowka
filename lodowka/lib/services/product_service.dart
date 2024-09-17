@@ -3,11 +3,10 @@ import 'dart:async';
 import 'package:openfoodfacts/openfoodfacts.dart';
 
 class ProductService {
-  // Fetch product details from OpenFoodFacts
   Future<Product?> getProduct(String barcode) async {
     final ProductQueryConfiguration configuration = ProductQueryConfiguration(
       barcode,
-      language: OpenFoodFactsLanguage.GERMAN,
+      language: OpenFoodFactsLanguage.POLISH,
       fields: [ProductField.ALL],
       version: ProductQueryVersion.v3,
     );

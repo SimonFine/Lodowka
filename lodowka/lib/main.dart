@@ -5,9 +5,9 @@ import 'pages/log_in.dart';
 
 void main() {
     OpenFoodAPIConfiguration.userAgent = UserAgent(
-    name: 'MyApp', // Replace with your app's name
-    version: '1.0.0', // Replace with your app version
-    system: 'Flutter', // You can specify the system or platform
+    name: 'Lodowka',
+    version: '1.0.0',
+    system: 'Flutter', 
   );
 
   runApp(const MyApp());

@@ -72,7 +72,6 @@ class _AddProductState extends State<AddProduct> {
 
   final ProductService _productService = ProductService();
 
-  // Initialize the list in initState, not in build
   @override
   void initState() {
     super.initState();
@@ -94,7 +93,6 @@ class _AddProductState extends State<AddProduct> {
           icon: const Icon(Icons.table_bar),
           color: const Color(0xFFFCE98B),
         );
-        // Add the new product to the list inside setState
         list.add(productObject);
         developer.log(list[list.length - 1].name);
       });
