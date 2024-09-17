@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
             currentPageIndex = index;
           });
         },
-        indicatorColor: Colors.amber,
+        indicatorColor: const Color(0XFFADC4E3),
         labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
         selectedIndex: currentPageIndex,
         destinations: const<Widget>[
