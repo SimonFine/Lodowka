@@ -35,7 +35,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Center(
+      body: <Widget>[
+      Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -57,6 +58,9 @@ class _HomePageState extends State<HomePage> {
             ],
         ),
       ),
+      const AddProduct(),
+      //Tutaj dodawac instancje kolejnych widzetow do ktorych bedziemy nawigowac benc clclcl
+      ][currentPageIndex]
     );
   }
 }
