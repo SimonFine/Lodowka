@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:group_button/group_button.dart';
+import 'package:openfoodfacts/openfoodfacts.dart';
 import 'dart:developer' as developer;
 import '../services/product_service.dart';
 
@@ -41,7 +42,7 @@ class _AddProductState extends State<AddProduct> {
       String barcode = _barcodeController.text;
       var product = await _productService.getProduct(barcode);
       setState(() {
-        _productName = product?.productName ?? 'Product not found';
+        _productName = product?.getProductNameBrandQuantity(OpenFoodFactsLanguage.POLISH, " ") ?? 'no found';
         Products productObject = Products(
           name: _productName,
           icon: const Icon(Icons.table_bar),
