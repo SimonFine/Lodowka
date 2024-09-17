@@ -22,45 +22,7 @@ class Products {
     required this.color
   });
 
-  static List<Products> getProducts() {
-    List<Products> list = [];
-    list.add(Products(
-      name: 'Mleko UHT 3,2% Bez Laktozy',
-      icon: const Icon(Icons.local_drink), // Zmieniona ikona
-      color: const Color(0xFFFCCFD8),
-    ));
-    list.add(Products(
-      name: 'Jajka Wiejskie',
-      icon: const Icon(Icons.star), // Zmieniona ikona
-      color: const Color(0xFFADC4E3),
-    ));
-    list.add(Products(
-      name: 'Chleb Żytni',
-      icon: const Icon(Icons.g_mobiledata), // Ikona chleba
-      color: const Color(0xFFADC4E3), // Dodany kolor
-    ));
-    list.add(Products(
-      name: 'Masło',
-      icon: const Icon(Icons.face), // Ikona masła
-      color: const Color(0xFFFCCFD8), // Można zmienić na inny kolor, jeśli potrzebujesz
-    ));
-    list.add(Products(
-      name: 'Ser Gouda',
-      icon: const Icon(Icons.wallet), // Ikona sera
-      color: const Color(0xFFFCE98B), // Dodany kolor
-    ));
-    list.add(Products(
-      name: 'Jogurt Naturalny',
-      icon: const Icon(Icons.table_bar), // Ikona jogurtu
-      color: const Color(0xFFADC4E3), // Dodany kolor
-    ));
-    list.add(Products(
-      name: 'Owoce Tropikalne',
-      icon: const Icon(Icons.apple), // Ikona owoców
-      color: const Color(0xFFFCE98B), // Dodany kolor
-    ));
-    return list;
-  }
+
 }
 
 class _AddProductState extends State<AddProduct> {
@@ -72,15 +34,7 @@ class _AddProductState extends State<AddProduct> {
 
   final ProductService _productService = ProductService();
 
-  @override
-  void initState() {
-    super.initState();
-    getProductsFromList();
-  }
-
-  void getProductsFromList() {
-    list = Products.getProducts();
-  }
+  
 
   void _getProduct() async {
     try {
