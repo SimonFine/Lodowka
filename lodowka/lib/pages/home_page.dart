@@ -10,10 +10,34 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int currentPageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (int index) {
+          setState(() {
+            currentPageIndex = index;
+          });
+        },
+        indicatorColor: const Color(0XFFADC4E3),
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+        selectedIndex: currentPageIndex,
+        destinations: const<Widget>[
+          NavigationDestination(
+            selectedIcon: Icon(Icons.home),
+            icon: Icon(Icons.home_outlined),
+            label: 'Home',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.add_outlined),
+            label: 'Add Product',
+          ),
+        ],
+      ),
+      body: <Widget>[
+      Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -35,6 +59,9 @@ class _HomePageState extends State<HomePage> {
             ],
         ),
       ),
+      const AddProduct(),
+      //Tutaj dodawac instancje kolejnych widzetow do ktorych bedziemy nawigowac benc clclcl
+      ][currentPageIndex]
     );
   }
 }
