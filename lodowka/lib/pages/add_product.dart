@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:group_button/group_button.dart';
 import 'dart:developer' as developer;
+import '../services/product_service.dart';
 
 class AddProduct extends StatefulWidget {
   const AddProduct({super.key});
@@ -66,15 +67,46 @@ class _AddProductState extends State<AddProduct> {
   final GroupButtonController _controller = GroupButtonController(selectedIndex: 0);
   List<Products> list = [];
 
+  final _barcodeController = TextEditingController();
+  String _productName = 'No product found yet';
+
+  final ProductService _productService = ProductService();
+
+  // Initialize the list in initState, not in build
+  @override
+  void initState() {
+    super.initState();
+    getProductsFromList();
+  }
+
   void getProductsFromList() {
     list = Products.getProducts();
   }
 
-
+  void _getProduct() async {
+    try {
+      String barcode = _barcodeController.text;
+      var product = await _productService.getProduct(barcode);
+      setState(() {
+        _productName = product?.productName ?? 'Product not found';
+        Products productObject = Products(
+          name: _productName,
+          icon: const Icon(Icons.table_bar),
+          color: const Color(0xFFFCE98B),
+        );
+        // Add the new product to the list inside setState
+        list.add(productObject);
+        developer.log(list[list.length - 1].name);
+      });
+    } catch (e) {
+      setState(() {
+        _productName = 'Error: ${e.toString()}';
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    getProductsFromList();
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -126,6 +158,7 @@ class _AddProductState extends State<AddProduct> {
                       prefixIcon: const Icon(Icons.search),
                       labelText: 'Product name',
                     ),
+                    controller: _barcodeController,
                   ),
                 ),
                 const SizedBox(width: 21),
@@ -133,7 +166,7 @@ class _AddProductState extends State<AddProduct> {
                   width: 56,
                   height: 56,
                   child: FilledButton(
-                    onPressed: () {},
+                    onPressed: _getProduct,
                     style: FilledButton.styleFrom(
                       backgroundColor: const Color(0xFFFBD852),
                       padding: const EdgeInsets.all(14),
@@ -195,7 +228,7 @@ class _AddProductState extends State<AddProduct> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(15),  //rowny padding w calym kontenerze produktu
+                      padding: const EdgeInsets.all(15),
                       child: Row(
                         children: [
                           SizedBox(
@@ -205,7 +238,7 @@ class _AddProductState extends State<AddProduct> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.only(right: 15),  //aby oddzielic tekst od przycisku dodaj
+                              padding: const EdgeInsets.only(right: 15),
                               child: Text(
                                 product.name,
                                 style: const TextStyle(
@@ -219,13 +252,13 @@ class _AddProductState extends State<AddProduct> {
                           Align(
                             alignment: Alignment.bottomRight,
                             child: SizedBox(
-                              width: 45,  //45 chyba jest blizej figmy
+                              width: 45,
                               height: 45,
                               child: FilledButton(
                                 onPressed: () {},
                                 style: FilledButton.styleFrom(
                                   backgroundColor: const Color(0xFFFDFDFD),
-                                  padding: EdgeInsets.zero, //aby ikonka byla wycentrowana nawet jesli zmieniamy wymiary SizedBox
+                                  padding: EdgeInsets.zero,
                                   side: const BorderSide(
                                     color: Color(0xFF1D1B20),
                                     width: 2,
@@ -254,3 +287,4 @@ class _AddProductState extends State<AddProduct> {
     );
   }
 }
+
