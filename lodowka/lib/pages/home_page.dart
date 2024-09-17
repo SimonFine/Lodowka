@@ -22,6 +22,7 @@ class _HomePageState extends State<HomePage> {
           });
         },
         indicatorColor: Colors.amber,
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
         selectedIndex: currentPageIndex,
         destinations: const<Widget>[
           NavigationDestination(
