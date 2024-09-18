@@ -12,30 +12,26 @@ class AddProduct extends StatefulWidget {
   State<AddProduct> createState() => _AddProductState();
 }
 
-class Products {
+class Product {
   String name;
   Icon icon;
   Color color;
 
-  Products({
+  Product({
     required this.name,
     required this.icon,
     required this.color
   });
-
-
 }
 
 class _AddProductState extends State<AddProduct> {
   final GroupButtonController _controller = GroupButtonController(selectedIndex: 0);
-  List<Products> list = [];
+  List<Product> list = [];
 
   final _barcodeController = TextEditingController();
   String _productName = 'No product found yet';
 
   final ProductService _productService = ProductService();
-
-  
 
   void _getProduct() async {
     try {
@@ -43,7 +39,7 @@ class _AddProductState extends State<AddProduct> {
       var product = await _productService.getProduct(barcode);
       setState(() {
         _productName = product?.getProductNameBrandQuantity(OpenFoodFactsLanguage.POLISH, " ") ?? 'no found';
-        Products productObject = Products(
+        Product productObject = Product(
           name: _productName,
           icon: const Icon(Icons.table_bar),
           color: const Color(0xFFFCE98B),
