@@ -56,118 +56,116 @@ class _ProfileState extends State<Profile> {
                     padding: const EdgeInsets.only(
                       top: 40
                     ),
-                    child: Container(
+                    child: SizedBox(
                       height: 64,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                        color: const Color(0xFF1D1808),
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(24)
-                      ),
-                      child: const Padding(
-                        padding: EdgeInsets.only(
-                          left: 20,
-                          right: 20
+                      child: FilledButton(onPressed: () {}, 
+                        style: FilledButton.styleFrom(
+                          backgroundColor: Color(0xFFFDFDFD),
+                          
+                          side: const BorderSide(
+                                    color: Color(0xFF1D1B20),
+                                    width: 2,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(24),
+                          ),
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Icon(Icons.edit),
-                                SizedBox(width: 15),
-                                Text("Edit Profile",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600
-                                  ),),
+                                Row(
+                                  children: [
+                                    Icon(Icons.edit, color: Color(0xFF1D1808),),
+                                    SizedBox(width: 15),
+                                    Text("Edit Profile",
+                                      style: TextStyle(
+                                        color: Color(0xFF1D1808),
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600
+                                      ),),
+                                  ],
+                                ),
+                                Icon(Icons.chevron_right, color: Color(0xFF1D1808))
                               ],
                             ),
-                            Icon(Icons.chevron_right)
-                          ],
-                        ),
-                      ),
+                        ),)
                     ),
-                  ),
                   Padding(
                     padding: const EdgeInsets.only(
                       top: 16
                     ),
-                    child: Container(
+                    child: SizedBox(
                       height: 64,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                        color: const Color(0xFF1D1808),
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(24)
-                      ),
-                      child: const Padding(
-                        padding: EdgeInsets.only(
-                          left: 20,
-                          right: 20
+                      child: FilledButton(onPressed: () {}, 
+                        style: FilledButton.styleFrom(
+                          backgroundColor: Color(0xFFFDFDFD),
+                          
+                          side: const BorderSide(
+                                    color: Color(0xFF1D1B20),
+                                    width: 2,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(24),
+                          ),
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Icon(Icons.settings),
-                                SizedBox(width: 15),
-                                Text("Settings",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600
-                                  ),),
+                                Row(
+                                  children: [
+                                    Icon(Icons.settings, color: Color(0xFF1D1808),),
+                                    SizedBox(width: 15),
+                                    Text("Settings",
+                                      style: TextStyle(
+                                        color: Color(0xFF1D1808),
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600
+                                      ),),
+                                  ],
+                                ),
+                                Icon(Icons.chevron_right, color: Color(0xFF1D1808))
                               ],
                             ),
-                            Icon(Icons.chevron_right)
-                          ],
-                        ),
-                      ),
+                        ),)
                     ),
-                  ),
-                  Padding(
+                    Padding(
                     padding: const EdgeInsets.only(
                       top: 16
                     ),
-                    child: Container(
+                    child: SizedBox(
                       height: 64,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                        color: const Color(0xFF1D1808),
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(24)
-                      ),
-                      child: const Padding(
-                        padding: EdgeInsets.only(
-                          left: 20,
-                          right: 20
+                      child: FilledButton(onPressed: () {}, 
+                        style: FilledButton.styleFrom(
+                          backgroundColor: Color(0xFFFDFDFD),
+                          
+                          side: const BorderSide(
+                                    color: Color(0xFF1D1B20),
+                                    width: 2,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(24),
+                          ),
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Icon(Icons.logout,
-                                color: Color(0xFFDB235E)),
-                                SizedBox(width: 15),
-                                Text("Log Out",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xFFDB235E)
-                                  ),),
+                                Row(
+                                  children: [
+                                    Icon(Icons.logout, color: Color(0xFFDB235E),),
+                                    SizedBox(width: 15),
+                                    Text("Log Out",
+                                      style: TextStyle(
+                                        color: Color(0xFFDB235E),
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600
+                                      ),),
+                                  ],
+                                ),
+                                Icon(Icons.chevron_right, color: Color(0xFF1D1808))
                               ],
                             ),
-                            Icon(Icons.chevron_right)
-                          ],
-                        ),
-                      ),
+                        ),)
                     ),
-                  ),
                 ],
               ),
             ),
