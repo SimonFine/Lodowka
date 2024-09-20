@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
+import 'package:flutter_application_1/pages/profile.dart';
 import 'package:group_button/group_button.dart';
 import 'dart:developer' as developer;
 

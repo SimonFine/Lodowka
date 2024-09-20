@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/add_product.dart';
+import 'package:flutter_application_1/pages/profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -33,6 +34,10 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.add_outlined),
             label: 'Add Product',
           ),
+          NavigationDestination(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
         ],
       ),
       body: <Widget>[
@@ -40,6 +45,7 @@ class _HomePageState extends State<HomePage> {
         child: Text('Home Page'),
       ),
       const AddProduct(),
+      const Profile(),
       //Tutaj dodawac instancje kolejnych widzetow do ktorych bedziemy nawigowac benc clclcl
       ][currentPageIndex]
     );
