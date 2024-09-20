@@ -77,23 +77,8 @@ class _AddProductState extends State<AddProduct> {
     getProductsFromList();
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 20),
-          child: IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const HomePage(),
-                ),
-              );
-            },
-            icon: const Icon(Icons.arrow_back),
-            iconSize: 36,
-          ),
-        ),
         title: const Padding(
-          padding: EdgeInsets.only(left: 10),
+          padding: EdgeInsets.only(left: 30),
           child: Text(
             'Add Product',
             style: TextStyle(
@@ -103,6 +88,7 @@ class _AddProductState extends State<AddProduct> {
           ),
         ),
         backgroundColor: const Color(0xFFFDFDFD),
+        automaticallyImplyLeading: false, // Usuwa automatyczną strzałkę wstecz
       ),
       backgroundColor: const Color(0xFFFDFDFD),
       body: Padding(
