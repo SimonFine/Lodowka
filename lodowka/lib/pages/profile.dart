@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/log_in.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -134,7 +135,10 @@ class _ProfileState extends State<Profile> {
                     ),
                     child: SizedBox(
                       height: 64,
-                      child: FilledButton(onPressed: () {}, 
+                      child: FilledButton(onPressed: () {
+                        Navigator.push(context, 
+                          MaterialPageRoute(builder: (contex) => LogIn(title: 'Lodowka login page')));
+                      }, 
                         style: FilledButton.styleFrom(
                           backgroundColor: Color(0xFFFDFDFD),
                           
