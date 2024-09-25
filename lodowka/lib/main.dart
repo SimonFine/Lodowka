@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:openfoodfacts/openfoodfacts.dart';
 import 'pages/log_in.dart';
 
 void main() {
+    OpenFoodAPIConfiguration.userAgent = UserAgent(
+    name: 'Lodowka',
+    version: '1.0.0',
+    system: 'Flutter', 
+  );
+
   runApp(const MyApp());
 }
 

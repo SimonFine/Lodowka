@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:group_button/group_button.dart';
+import 'package:openfoodfacts/openfoodfacts.dart';
 import 'dart:developer' as developer;
+import '../services/product_service.dart';
 
 class AddProduct extends StatefulWidget {
   const AddProduct({super.key});
@@ -10,71 +12,50 @@ class AddProduct extends StatefulWidget {
   State<AddProduct> createState() => _AddProductState();
 }
 
-class Products {
+class Product {
   String name;
   Icon icon;
   Color color;
 
-  Products({
+  Product({
     required this.name,
     required this.icon,
     required this.color
   });
-
-  static List<Products> getProducts() {
-    List<Products> list = [];
-    list.add(Products(
-      name: 'Mleko UHT 3,2% Bez Laktozy',
-      icon: const Icon(Icons.local_drink), // Zmieniona ikona
-      color: const Color(0xFFFCCFD8),
-    ));
-    list.add(Products(
-      name: 'Jajka Wiejskie',
-      icon: const Icon(Icons.star), // Zmieniona ikona
-      color: const Color(0xFFADC4E3),
-    ));
-    list.add(Products(
-      name: 'Chleb Żytni',
-      icon: const Icon(Icons.g_mobiledata), // Ikona chleba
-      color: const Color(0xFFADC4E3), // Dodany kolor
-    ));
-    list.add(Products(
-      name: 'Masło',
-      icon: const Icon(Icons.face), // Ikona masła
-      color: const Color(0xFFFCCFD8), // Można zmienić na inny kolor, jeśli potrzebujesz
-    ));
-    list.add(Products(
-      name: 'Ser Gouda',
-      icon: const Icon(Icons.wallet), // Ikona sera
-      color: const Color(0xFFFCE98B), // Dodany kolor
-    ));
-    list.add(Products(
-      name: 'Jogurt Naturalny',
-      icon: const Icon(Icons.table_bar), // Ikona jogurtu
-      color: const Color(0xFFADC4E3), // Dodany kolor
-    ));
-    list.add(Products(
-      name: 'Owoce Tropikalne',
-      icon: const Icon(Icons.apple), // Ikona owoców
-      color: const Color(0xFFFCE98B), // Dodany kolor
-    ));
-    return list;
-  }
 }
 
 class _AddProductState extends State<AddProduct> {
   final GroupButtonController _controller = GroupButtonController(selectedIndex: 0);
-  List<Products> list = [];
+  List<Product> list = [];
 
-  void getProductsFromList() {
-    list = Products.getProducts();
+  final _barcodeController = TextEditingController();
+  String _productName = 'No product found yet';
+
+  final ProductService _productService = ProductService();
+
+  void _getProduct() async {
+    try {
+      String barcode = _barcodeController.text;
+      var product = await _productService.getProduct(barcode);
+      setState(() {
+        _productName = product?.getProductNameBrandQuantity(OpenFoodFactsLanguage.POLISH, " ") ?? 'no found';
+        Product productObject = Product(
+          name: _productName,
+          icon: const Icon(Icons.table_bar),
+          color: const Color(0xFFFCE98B),
+        );
+        list.add(productObject);
+        developer.log(list[list.length - 1].name);
+      });
+    } catch (e) {
+      setState(() {
+        _productName = 'Error: ${e.toString()}';
+      });
+    }
   }
-
-
 
   @override
   Widget build(BuildContext context) {
-    getProductsFromList();
     return Scaffold(
       appBar: AppBar(
         title: const Padding(
@@ -113,6 +94,7 @@ class _AddProductState extends State<AddProduct> {
                       prefixIcon: const Icon(Icons.search),
                       labelText: 'Product name',
                     ),
+                    controller: _barcodeController,
                   ),
                 ),
                 const SizedBox(width: 21),
@@ -120,7 +102,7 @@ class _AddProductState extends State<AddProduct> {
                   width: 56,
                   height: 56,
                   child: FilledButton(
-                    onPressed: () {},
+                    onPressed: _getProduct,
                     style: FilledButton.styleFrom(
                       backgroundColor: const Color(0xFFFBD852),
                       padding: const EdgeInsets.all(14),
@@ -182,7 +164,7 @@ class _AddProductState extends State<AddProduct> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(15),  //rowny padding w calym kontenerze produktu
+                      padding: const EdgeInsets.all(15),
                       child: Row(
                         children: [
                           SizedBox(
@@ -192,7 +174,7 @@ class _AddProductState extends State<AddProduct> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.only(right: 15),  //aby oddzielic tekst od przycisku dodaj
+                              padding: const EdgeInsets.only(right: 15),
                               child: Text(
                                 product.name,
                                 style: const TextStyle(
@@ -206,13 +188,13 @@ class _AddProductState extends State<AddProduct> {
                           Align(
                             alignment: Alignment.bottomRight,
                             child: SizedBox(
-                              width: 45,  //45 chyba jest blizej figmy
+                              width: 45,
                               height: 45,
                               child: FilledButton(
                                 onPressed: () {},
                                 style: FilledButton.styleFrom(
                                   backgroundColor: const Color(0xFFFDFDFD),
-                                  padding: EdgeInsets.zero, //aby ikonka byla wycentrowana nawet jesli zmieniamy wymiary SizedBox
+                                  padding: EdgeInsets.zero,
                                   side: const BorderSide(
                                     color: Color(0xFF1D1B20),
                                     width: 2,
@@ -241,3 +223,4 @@ class _AddProductState extends State<AddProduct> {
     );
   }
 }
+
