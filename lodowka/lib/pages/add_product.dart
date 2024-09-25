@@ -88,6 +88,7 @@ class _AddProductState extends State<AddProduct> {
           ),
         ),
         backgroundColor: const Color(0xFFFDFDFD),
+        scrolledUnderElevation: 0,
         automaticallyImplyLeading: false, // Usuwa automatyczną strzałkę wstecz
       ),
       backgroundColor: const Color(0xFFFDFDFD),
