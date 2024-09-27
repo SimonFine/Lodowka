@@ -15,6 +15,29 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: currentPageIndex == 0
+          ? AppBar(
+              title: const Padding(
+                padding: EdgeInsets.only(left: 30),
+                child: Text(
+                  'Hello, Alex',
+                  style: TextStyle(
+                    color: Color(0xFF1D1808),
+                    fontSize: 36,
+                  ),
+                ),
+              ),
+              backgroundColor: const Color(0xFFFDFDFD),
+              scrolledUnderElevation: 0,
+              automaticallyImplyLeading: false, 
+              actions: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 30),
+                  child: CircleAvatar(), //tu trzeba zmienić tak jak S zrobił ale nie spushował 
+                )
+              ],
+            )
+          : null, 
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {
@@ -24,7 +47,7 @@ class _HomePageState extends State<HomePage> {
         indicatorColor: const Color(0XFFADC4E3),
         labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
         selectedIndex: currentPageIndex,
-        destinations: const<Widget>[
+        destinations: const <Widget>[
           NavigationDestination(
             selectedIcon: Icon(Icons.home),
             icon: Icon(Icons.home_outlined),
@@ -41,13 +64,12 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: <Widget>[
-      const Center(
-        child: Text('Home Page'),
-      ),
-      const AddProduct(),
-      const Profile(),
-      //Tutaj dodawac instancje kolejnych widzetow do ktorych bedziemy nawigowac benc clclcl
-      ][currentPageIndex]
+        const Center(
+          child: Text('Home Page'),
+        ),
+        const AddProduct(),
+        const Profile(),
+      ][currentPageIndex],
     );
   }
 }
