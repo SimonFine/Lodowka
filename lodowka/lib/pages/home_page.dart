@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/add_product.dart';
 import 'package:flutter_application_1/pages/fridge.dart';
 import 'package:flutter_application_1/pages/profile.dart';
-import 'add_product.dart';
+import 'fridge.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -66,74 +66,76 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: <Widget>[
-        Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: Center(
-            child: ListView(
-              children: [
-                Expanded(
-                  child: Container(
-                    height: 180,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFADC4E3),
-                      border: Border.all(
-                        width: 2,
-                        color: Color(0xFF1D1808)
-                      ),
-                      borderRadius: BorderRadius.circular(24)
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(30.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("You haven't wasted", 
-                            style: TextStyle(
-                              fontSize: 20),),
-                          Text("food for", style: TextStyle(fontSize: 20)),
-                          Text("20 days", 
-                            style: TextStyle(
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold
-                              ))
-                        ],
-                      ),
-                    ),
-                  )),
-                  SizedBox(height: 42,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Your Fridge", 
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.w600
-                        ),
-                      ),
-                      TextButton.icon(onPressed: () {
-                        Navigator.push(
-                          context, 
-                          MaterialPageRoute(
-                            builder: (context) => Fridge()));
-                      }, 
-                      label: Text("View all",
-                        style: TextStyle(
-                          color: Color(0xFF41518C),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14
-                        ),),
-                      icon: Icon(Icons.chevron_right, color: Color(0xFF41518C),),
-                      iconAlignment: IconAlignment.end,
-                      )
-                    ],
-                  )
-              ],
+  Padding(
+    padding: const EdgeInsets.all(30.0),
+    child: Center(
+      child: ListView(
+        children: [
+          Container(  // Usunięto Expanded
+            height: 180,
+            decoration: BoxDecoration(
+              color: Color(0xFFADC4E3),
+              border: Border.all(
+                width: 2,
+                color: Color(0xFF1D1808)
+              ),
+              borderRadius: BorderRadius.circular(24)
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("You haven't wasted", 
+                    style: TextStyle(
+                      fontSize: 20),),
+                  Text("food for", style: TextStyle(fontSize: 20)),
+                  Text("20 days", 
+                    style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold
+                    ))
+                ],
+              ),
             ),
           ),
-        ),
-        const AddProduct(),
-        const Profile(),
-      ][currentPageIndex],
+          SizedBox(height: 42,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Your Fridge", 
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w600
+                ),
+              ),
+              TextButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(
+                      builder: (context) => Fridge()));
+                }, 
+                label: Text("View all",
+                  style: TextStyle(
+                    color: Color(0xFF41518C),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14
+                  ),
+                ),
+                icon: Icon(Icons.chevron_right, color: Color(0xFF41518C),),
+                iconAlignment: IconAlignment.end,
+              )
+            ],
+          ),
+          // tu będzie listView.separated
+        ],
+      ),
+    ),
+  ),
+  const AddProduct(),
+  const Profile(),
+][currentPageIndex],
     );
   }
 }

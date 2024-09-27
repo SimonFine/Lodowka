@@ -40,6 +40,7 @@ class _FridgeState extends State<Fridge> {
         backgroundColor: const Color(0xFFFDFDFD),
         scrolledUnderElevation: 0,
       ),
+       
     );
   }
 }
