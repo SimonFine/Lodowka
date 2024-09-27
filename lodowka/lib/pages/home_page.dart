@@ -64,8 +64,43 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: <Widget>[
-        const Center(
-          child: Text('Home Page'),
+        Padding(
+          padding: const EdgeInsets.all(30.0),
+          child: Center(
+            child: ListView(
+              children: [
+                Expanded(
+                  child: Container(
+                    height: 180,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFADC4E3),
+                      border: Border.all(
+                        width: 2,
+                        color: Color(0xFF1D1808)
+                      ),
+                      borderRadius: BorderRadius.circular(24)
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(30.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("You haven't wasted", 
+                            style: TextStyle(
+                              fontSize: 20),),
+                          Text("food for", style: TextStyle(fontSize: 20)),
+                          Text("20 days", 
+                            style: TextStyle(
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold
+                              ))
+                        ],
+                      ),
+                    ),
+                  ))
+              ],
+            ),
+          ),
         ),
         const AddProduct(),
         const Profile(),
