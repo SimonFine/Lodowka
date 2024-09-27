@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/add_product.dart';
+import 'package:flutter_application_1/pages/fridge.dart';
 import 'package:flutter_application_1/pages/profile.dart';
+import 'add_product.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -97,7 +99,34 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                  ))
+                  )),
+                  SizedBox(height: 42,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Your Fridge", 
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.w600
+                        ),
+                      ),
+                      TextButton.icon(onPressed: () {
+                        Navigator.push(
+                          context, 
+                          MaterialPageRoute(
+                            builder: (context) => Fridge()));
+                      }, 
+                      label: Text("View all",
+                        style: TextStyle(
+                          color: Color(0xFF41518C),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14
+                        ),),
+                      icon: Icon(Icons.chevron_right, color: Color(0xFF41518C),),
+                      iconAlignment: IconAlignment.end,
+                      )
+                    ],
+                  )
               ],
             ),
           ),
