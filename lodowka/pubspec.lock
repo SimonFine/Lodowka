@@ -57,6 +57,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+  custom_linear_progress_indicator:
+    dependency: "direct main"
+    description:
+      name: custom_linear_progress_indicator
+      sha256: "32b9fc0ce5f21f48626759db34248fac6b9be5299e2a42e9c7a7e1066d9efe60"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   fake_async:
     dependency: transitive
     description:

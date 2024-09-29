@@ -3,6 +3,8 @@ import 'package:flutter_application_1/pages/add_product.dart';
 import 'package:flutter_application_1/pages/fridge.dart';
 import 'package:flutter_application_1/pages/profile.dart';
 import 'fridge.dart';
+import 'package:custom_linear_progress_indicator/custom_linear_progress_indicator.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -129,6 +131,64 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           // tu będzie listView.separated
+          SizedBox(height: 27),
+          Container(
+            height: 180,
+            decoration: BoxDecoration(
+              color: Color(0xFFFCE98B),
+              borderRadius: BorderRadius.circular(24),
+              border: Border.all(
+                width: 2,
+                color: Color(0xFF1D1808)
+              )
+            ),
+            child:  Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Flexible(
+                        child: Text("Mleko UHT 3,2% Bez Laktozy", 
+                          style: TextStyle(
+                            fontSize: 24
+                          ),),
+                      ),
+                      Icon(Icons.apple, size: 90,)
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.hourglass_top),
+                      Text("Expires in: 7 Days",
+                      style: TextStyle(
+                            fontSize: 16
+                          ),)
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: CustomLinearProgressIndicator(
+                      animationDurationSeconds: 1,
+                        progressPercent: 0.3,
+                        borderColor: Color(0xFF1D1808),
+                        borderWidth: 2,
+                        colorLinearProgress: Color(0xFF6184C6),
+                        borderRadius: 16.0,
+                        linearProgressBarBorderRadius: 16,
+                        backgroundColor: Color(0xFFFDFDFD),
+                        percentTextStyle: TextStyle(
+                          fontSize: 0
+                        ),
+                      ),
+                  )
+                  
+                ],
+              ),
+            ),
+          )
         ],
       ),
     ),
