@@ -12,7 +12,7 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFBD852),
+      backgroundColor: const Color(0xFFFBD852),
       body: Stack(
         children: [
           Positioned(
@@ -61,7 +61,7 @@ class _ProfileState extends State<Profile> {
                       height: 64,
                       child: FilledButton(onPressed: () {}, 
                         style: FilledButton.styleFrom(
-                          backgroundColor: Color(0xFFFDFDFD),
+                          backgroundColor: const Color(0xFFFDFDFD),
                           
                           side: const BorderSide(
                                     color: Color(0xFF1D1B20),
@@ -99,7 +99,7 @@ class _ProfileState extends State<Profile> {
                       height: 64,
                       child: FilledButton(onPressed: () {}, 
                         style: FilledButton.styleFrom(
-                          backgroundColor: Color(0xFFFDFDFD),
+                          backgroundColor: const Color(0xFFFDFDFD),
                           
                           side: const BorderSide(
                                     color: Color(0xFF1D1B20),
@@ -137,10 +137,10 @@ class _ProfileState extends State<Profile> {
                       height: 64,
                       child: FilledButton(onPressed: () {
                         Navigator.push(context, 
-                          MaterialPageRoute(builder: (contex) => LogIn(title: 'Lodowka login page')));
+                          MaterialPageRoute(builder: (contex) => const LogIn(title: 'Lodowka login page')));
                       }, 
                         style: FilledButton.styleFrom(
-                          backgroundColor: Color(0xFFFDFDFD),
+                          backgroundColor: const Color(0xFFFDFDFD),
                           
                           side: const BorderSide(
                                     color: Color(0xFF1D1B20),
@@ -183,14 +183,14 @@ class _ProfileState extends State<Profile> {
               width: 140,
               height: 140,
               decoration: BoxDecoration(
-                color: Color(0xFFFCCFD8),
+                color: const Color(0xFFFCCFD8),
                 shape: BoxShape.circle,
                 border: Border.all(
                 color: const Color(0xFF1D1808),
                 width: 2.0,
               ),
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.person,
                 size: 60,
               ),

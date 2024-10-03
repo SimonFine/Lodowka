@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/add_product.dart';
 import 'package:flutter_application_1/pages/fridge.dart';
 import 'package:flutter_application_1/pages/profile.dart';
-import 'fridge.dart';
 import 'package:custom_linear_progress_indicator/custom_linear_progress_indicator.dart';
 
 
@@ -34,9 +33,9 @@ class _HomePageState extends State<HomePage> {
               backgroundColor: const Color(0xFFFDFDFD),
               scrolledUnderElevation: 0,
               automaticallyImplyLeading: false, 
-              actions: [
+              actions: const [
                 Padding(
-                  padding: const EdgeInsets.only(right: 30),
+                  padding: EdgeInsets.only(right: 30),
                   child: CircleAvatar(), //tu trzeba zmienić tak jak S zrobił ale nie spushował 
                 )
               ],
@@ -76,15 +75,15 @@ class _HomePageState extends State<HomePage> {
           Container(  // Usunięto Expanded
             height: 180,
             decoration: BoxDecoration(
-              color: Color(0xFFADC4E3),
+              color: const Color(0xFFADC4E3),
               border: Border.all(
                 width: 2,
-                color: Color(0xFF1D1808)
+                color: const Color(0xFF1D1808)
               ),
               borderRadius: BorderRadius.circular(24)
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(30.0),
+            child: const Padding(
+              padding: EdgeInsets.all(30.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -101,11 +100,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          SizedBox(height: 42,),
+          const SizedBox(height: 42,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Your Fridge", 
+              const Text("Your Fridge", 
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.w600
@@ -116,33 +115,33 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                     context, 
                     MaterialPageRoute(
-                      builder: (context) => Fridge()));
+                      builder: (context) => const Fridge()));
                 }, 
-                label: Text("View all",
+                label: const Text("View all",
                   style: TextStyle(
                     color: Color(0xFF41518C),
                     fontWeight: FontWeight.bold,
                     fontSize: 14
                   ),
                 ),
-                icon: Icon(Icons.chevron_right, color: Color(0xFF41518C),),
+                icon: const Icon(Icons.chevron_right, color: Color(0xFF41518C),),
                 iconAlignment: IconAlignment.end,
               )
             ],
           ),
           // tu będzie listView.separated
-          SizedBox(height: 27),
+          const SizedBox(height: 27),
           Container(
             height: 180,
             decoration: BoxDecoration(
-              color: Color(0xFFFCE98B),
+              color: const Color(0xFFFCE98B),
               borderRadius: BorderRadius.circular(24),
               border: Border.all(
                 width: 2,
-                color: Color(0xFF1D1808)
+                color: const Color(0xFF1D1808)
               )
             ),
-            child:  Padding(
+            child:  const Padding(
               padding: EdgeInsets.all(20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

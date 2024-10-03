@@ -20,9 +20,9 @@ class _FridgeState extends State<Fridge> {
               Navigator.push(
                 context, 
                 MaterialPageRoute(
-                  builder: (contex) => HomePage()));
+                  builder: (contex) => const HomePage()));
             },
-            icon: Icon(Icons.arrow_back, 
+            icon: const Icon(Icons.arrow_back, 
               color: Color(0xFF1D1808),
               size: 38,)
           ),
